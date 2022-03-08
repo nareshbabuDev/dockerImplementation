@@ -6,6 +6,7 @@ import java.net.URL;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterTest;
@@ -23,16 +24,15 @@ public class BaseTest {
 		if(System.getProperty("HUB_HOST")!=null){
 			host = System.getProperty("HUB_HOST");
 		}
-		String completeURL = "https://" + host + ":4444/wd/hub";
-		DesiredCapabilities capabilities = null;
-		//capabilities = DesiredCapabilities.chrome();
+		String completeURL = "https://" + host + ":4444";
 		if(System.getProperty("BROWSER")!=null && System.getProperty("BROWSER").equalsIgnoreCase("firefox")) {
-			capabilities = DesiredCapabilities.firefox();
-			this.driver = new RemoteWebDriver(new URL(completeURL),capabilities);
+			FirefoxOptions fxoptions = new FirefoxOptions();
+			fxoptions.addArguments("disable-infobars");
+			this.driver = new RemoteWebDriver(new URL(completeURL),fxoptions);
 		}else {
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("disable-infobars");
-			this.driver = new RemoteWebDriver(new URL(completeURL),options);
+			ChromeOptions choptions = new ChromeOptions();
+			choptions.addArguments("disable-infobars");
+			this.driver = new RemoteWebDriver(new URL(completeURL),choptions);
 		}
 	}
 	
