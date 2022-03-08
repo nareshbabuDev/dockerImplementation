@@ -24,7 +24,7 @@ public class BaseTest {
 		if(System.getProperty("HUB_HOST")!=null){
 			host = System.getProperty("HUB_HOST");
 		}
-		String completeURL = "https://" + host + ":4444";
+		String completeURL = "https://" + host + ":4444/wd/hub";
 		if(System.getProperty("BROWSER")!=null && System.getProperty("BROWSER").equalsIgnoreCase("firefox")) {
 			FirefoxOptions fxoptions = new FirefoxOptions();
 			fxoptions.addArguments("disable-infobars");
