@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 4.44 s <<< FAILURE! - in TestSuite
+searchTest(tests.HomePageTest)  Time elapsed: 0.009 s  <<< FAILURE!
+java.lang.NullPointerException
+	at tests.HomePageTest.searchTest(HomePageTest.java:13)
+
+searchResultTest(tests.SearchResultPageTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.NullPointerException
+	at tests.SearchResultPageTest.searchResultTest(SearchResultPageTest.java:13)
+

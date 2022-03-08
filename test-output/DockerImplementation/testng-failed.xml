@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [DockerImplementation]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="tests" name="GoogleHomePageTest(failed)">
+    <classes>
+      <class name="tests.HomePageTest">
+        <methods>
+          <include name="searchTest"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- tests.HomePageTest -->
+    </classes>
+  </test> <!-- GoogleHomePageTest(failed) -->
+  <test thread-count="5" parallel="tests" name="GoogleSearchResultPageTest(failed)">
+    <classes>
+      <class name="tests.SearchResultPageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="searchResultTest"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- tests.SearchResultPageTest -->
+    </classes>
+  </test> <!-- GoogleSearchResultPageTest(failed) -->
+</suite> <!-- Failed suite [DockerImplementation] -->

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Test]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="GoogleHomePageTest(failed)">
+    <classes>
+      <class name="tests.HomePageTest">
+        <methods>
+          <include name="searchTest"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- tests.HomePageTest -->
+    </classes>
+  </test> <!-- GoogleHomePageTest(failed) -->
+  <test thread-count="5" name="GoogleSearchResultPageTest1(failed)">
+    <parameter name="index" value="2"/>
+    <parameter name="keyword" value="Docker"/>
+    <classes>
+      <class name="tests.SearchParameterResultPage">
+        <methods>
+          <include name="tearDown"/>
+          <include name="searchResultTest"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- tests.SearchParameterResultPage -->
+    </classes>
+  </test> <!-- GoogleSearchResultPageTest1(failed) -->
+  <test thread-count="5" name="GoogleSearchResultPageTest2(failed)">
+    <parameter name="index" value="3"/>
+    <parameter name="keyword" value="Selenium"/>
+    <classes>
+      <class name="tests.SearchParameterResultPage">
+        <methods>
+          <include name="tearDown"/>
+          <include name="searchResultTest"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- tests.SearchParameterResultPage -->
+    </classes>
+  </test> <!-- GoogleSearchResultPageTest2(failed) -->
+</suite> <!-- Failed suite [Test] -->
