@@ -21,4 +21,25 @@
 			<class name="tests.SearchParameterResultPage" />
 		</classes>
 	</test>
+	<test name="GoogleSearchResultPageTest3">
+		<parameter name="keyword" value="Selenium" />
+		<parameter name="index" value="3" />
+		<classes>
+			<class name="tests.SearchParameterResultPage" />
+		</classes>
+	</test>
+	<test name="GoogleSearchResultPageTest4">
+		<parameter name="keyword" value="Selenium" />
+		<parameter name="index" value="3" />
+		<classes>
+			<class name="tests.SearchParameterResultPage" />
+		</classes>
+	</test>
+	<test name="GoogleSearchResultPageTest5">
+		<parameter name="keyword" value="Selenium" />
+		<parameter name="index" value="3" />
+		<classes>
+			<class name="tests.SearchParameterResultPage" />
+		</classes>
+	</test>
 </suite>

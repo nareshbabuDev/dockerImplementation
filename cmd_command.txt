@@ -1,0 +1,4 @@
+>mvn clean package -DskipTests - Docker jar file creation
+>cd target
+>java -cp selenium-docker.jar;selenium-docker-tests.jar;libs/* org.testng.TestNG ../testng.xml
+>java -cp selenium-docker.jar;selenium-docker-tests.jar;libs/* -DBROWSER=firefox org.testng.TestNG ../parameter.xml

@@ -18,22 +18,24 @@ public class BaseTest {
 	
 	@BeforeTest
 	public void setup() throws MalformedURLException {
-		//System.setProperty("webdriver.chrome.driver","C:\\Users\\nares\\Documents\\Eclipse\\TestDockerImplementation\\drivers\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver","C:\\Users\\nares\\OneDrive\\Documents\\dockerImplementation\\drivers\\chromedriver.exe");
 		//driver = new ChromeDriver();	
-		String host = "localhost";
-		if(System.getProperty("HUB_HOST")!=null){
-			host = System.getProperty("HUB_HOST");
-		}
-		String completeURL = "http://localhost:4444";
-		if(System.getProperty("BROWSER")!=null && System.getProperty("BROWSER").equalsIgnoreCase("firefox")) {
-			FirefoxOptions fxoptions = new FirefoxOptions();
-			fxoptions.addArguments("disable-infobars");
-			this.driver = new RemoteWebDriver(new URL(completeURL),fxoptions);
-		}else {
-			ChromeOptions choptions = new ChromeOptions();
-			choptions.addArguments("disable-infobars");
-			this.driver = new RemoteWebDriver(new URL(completeURL),choptions);
-		}
+		
+		  String host = "localhost";
+		  if(System.getProperty("HUB_HOST")!=null){ 
+			  host = System.getProperty("HUB_HOST"); 
+		  } 
+		  String completeURL ="http://"+host+":4444/wd/hub"; 
+		  if(System.getProperty("BROWSER")!=null && System.getProperty("BROWSER").equalsIgnoreCase("firefox")) { 
+			  FirefoxOptions fxoptions = new FirefoxOptions(); 
+			  fxoptions.addArguments("disable-infobars");
+		      this.driver = new RemoteWebDriver(new URL(completeURL),fxoptions); 
+		  }else {
+		      ChromeOptions choptions = new ChromeOptions();
+		      choptions.addArguments("disable-infobars"); 
+		      this.driver = new RemoteWebDriver(new URL(completeURL),choptions); 
+		  }
+		 
 	}
 	
 	@AfterTest
