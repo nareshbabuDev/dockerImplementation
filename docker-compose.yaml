@@ -16,3 +16,14 @@ services:
    - hub
   environment:
    - HUB_HOST=hub
+ search-module:
+  image: 7395973214/selenium-docker
+  depends_on:
+   - chrome
+   - firefox
+  environment:
+   - HUB_HOST=hub
+   - BROWSER=chrome
+   - MODULE=parameter.xml
+  volumes:
+   - ./output:/Users/nares/OneDrive/Documents/dockerImplementation/test-output

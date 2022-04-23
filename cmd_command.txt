@@ -2,3 +2,9 @@
 >cd target
 >java -cp selenium-docker.jar;selenium-docker-tests.jar;libs/* org.testng.TestNG ../testng.xml
 >java -cp selenium-docker.jar;selenium-docker-tests.jar;libs/* -DBROWSER=firefox org.testng.TestNG ../parameter.xml
+>docker-compose up
+>docker build -t 7395973214/selenium-docker -f ./dockerfile.txt .
+>docker run --network=host 7395973214/selenium-docker
+>docker run -it --entrypoint=/bin/sh --network=host 7395973214/selenium-docker
+>java -cp selenium-docker.jar:selenium-docker-tests.jar:libs/* -DBROWSER=firefox -DHUB_HOST=172.18.0.2 org.testng.TestNG ../parameter.xml
+>docker run -d --network=host -e BROWSER=firefox -e HUB_HOST=172.18.0.2 -e MODULE=parameter.xml 7395973214/selenium-docker
